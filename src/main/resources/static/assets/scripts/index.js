@@ -1,4 +1,5 @@
 const $form = document.getElementById('form');
+const $div = document.createElement('div');
 
 $form.onsubmit = (e) => {
     e.preventDefault();
@@ -14,8 +15,18 @@ $form.onsubmit = (e) => {
             alert('오류 발생');
             return;
         }
-        const response = xhr.responseText;
-        console.log(response);
+        const response = JSON.parse(xhr.responseText);
+        const result = response["result"];
+        if (result === "success") {
+            $div.innerText = "메모를 성공적으로 작성하였습니다."
+            $div.style.color = "green";
+        } else {
+            $div.innerText = "메모를 작성하지 못하였습니다."
+            $div.style.color = "red";
+        }
+        $form.append($div);
+        $form['writer'].value = "";
+        $form['content'].value = "";
     };
     xhr.open('POST', location.href);
     xhr.send(formData);
