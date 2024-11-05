@@ -19,15 +19,15 @@ public class GreetingController {
     private final GreetingService greetingService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
-    public ModelAndView getGreeting() {
+    public ModelAndView getIndex() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
+        modelAndView.setViewName("greeting/index");
         return modelAndView;
     }
 
     @RequestMapping(value="/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public String postGreeting(GreetingEntity greeting) {
+    public String postIndex(GreetingEntity greeting) {
         WriteResult result = this.greetingService.write(greeting);
         JSONObject response = new JSONObject();
         response.put("result", result.name().toLowerCase());
