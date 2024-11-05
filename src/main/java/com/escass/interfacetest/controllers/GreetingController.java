@@ -1,5 +1,6 @@
 package com.escass.interfacetest.controllers;
 
+import com.escass.interfacetest.entities.GreetingEntity;
 import com.escass.interfacetest.results.greeting.WriteResult;
 import com.escass.interfacetest.services.GreetingService;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -25,10 +26,11 @@ public class GreetingController {
     }
 
     @RequestMapping(value="/", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String postGreeting(@RequestParam(value = "index", required = false, defaultValue = "0") int index) {
-        WriteResult result = this.greetingService.write();
+    @ResponseBody
+    public String postGreeting(GreetingEntity greeting) {
+        WriteResult result = this.greetingService.write(greeting);
         JSONObject response = new JSONObject();
-        response.put("result", result.name());
+        response.put("result", result.name().toLowerCase());
         return response.toString();
     }
 }

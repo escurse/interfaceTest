@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface GreetingMapper {
-    int insertGreeting(GreetingEntity greet);
+    int insertGreeting(GreetingEntity greeting);
 }
