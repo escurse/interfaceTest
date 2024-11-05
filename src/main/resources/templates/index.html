@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>방명록</title>
+</head>
+<body>
+<form id="form">
+    <h1>방명록</h1>
+    <label>
+        <span>작성자</span>
+        <input autofocus required minlength="2" maxlength="10" name="writer" placeholder="작성자" type="text">
+    </label>
+    <label>
+        <span>내용</span>
+        <input required minlength="1" maxlength="100" name="content" placeholder="내용" type="text">
+    </label>
+    <button type="submit">작성하기</button>
+    <div th:if=""></div>
+    <div th:if=""></div>
+</form>
+</body>
+</html>

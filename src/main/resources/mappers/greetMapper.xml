@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.escass.interfacetest.mappers.greetMapper">
+    <insert id="insertGreet"
+            useGeneratedKeys="true"
+            keyColumn="index"
+            keyProperty="index"
+            parameterType="com.escass.interfacetest.entities.greetEntity">
+        INSERT INTO `test0320`.`greetings`(`writer`, `content`, `created_at`)
+        VALUES (#{writer}, #{content}, #{createdAt})
+    </insert>
+
+    <select id="selectGreetByIndex"
+            resultType="com.escass.interfacetest.entities.greetEntity">
+        SELECT `index`      AS `index`,
+               `writer`     AS `writer`,
+               `content`    AS `content`,
+               `created_at` AS `createdAt`
+        FROM `test0320`.`greetings`
+        WHERE `index` = #{index}
+        LIMIT 1
+    </select>
+
+</mapper>
