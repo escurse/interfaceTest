@@ -1,5 +1,6 @@
 package com.escass.interfacetest.services;
 
+import com.escass.interfacetest.results.greeting.WriteResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class greetingService {
 
-    public boolean write() {
-        return true;
+    public WriteResult write() {
+        return WriteResult.SUCCESS;
     }
 }
