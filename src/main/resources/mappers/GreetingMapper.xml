@@ -11,16 +11,4 @@
         INSERT INTO `test0320`.`greetings`(`writer`, `content`, `created_at`)
         VALUES (#{writer}, #{content}, #{createdAt})
     </insert>
-
-    <select id="selectGreetingByIndex"
-            resultType="com.escass.interfacetest.entities.GreetingEntity">
-        SELECT `index`      AS `index`,
-               `writer`     AS `writer`,
-               `content`    AS `content`,
-               `created_at` AS `createdAt`
-        FROM `test0320`.`greetings`
-        WHERE `index` = #{index}
-        LIMIT 1
-    </select>
-
 </mapper>
