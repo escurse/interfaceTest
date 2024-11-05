@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class greetService {
+public class greetingService {
 
     public boolean write() {
         return true;

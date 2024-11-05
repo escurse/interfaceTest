@@ -2,18 +2,18 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.escass.interfacetest.mappers.greetMapper">
-    <insert id="insertGreet"
+<mapper namespace="com.escass.interfacetest.mappers.greetingMapper">
+    <insert id="insertGreeting"
             useGeneratedKeys="true"
             keyColumn="index"
             keyProperty="index"
-            parameterType="com.escass.interfacetest.entities.greetEntity">
+            parameterType="com.escass.interfacetest.entities.greetingEntity">
         INSERT INTO `test0320`.`greetings`(`writer`, `content`, `created_at`)
         VALUES (#{writer}, #{content}, #{createdAt})
     </insert>
 
-    <select id="selectGreetByIndex"
-            resultType="com.escass.interfacetest.entities.greetEntity">
+    <select id="selectGreetingByIndex"
+            resultType="com.escass.interfacetest.entities.greetingEntity">
         SELECT `index`      AS `index`,
                `writer`     AS `writer`,
                `content`    AS `content`,

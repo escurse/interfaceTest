@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EqualsAndHashCode(of = {"index"})
-public class greetEntity {
+public class greetingEntity {
     private int index;
     private String writer;
     private String content;
