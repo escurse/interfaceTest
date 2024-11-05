@@ -16,7 +16,7 @@ $form.onsubmit = (e) => {
             return;
         }
         const response = JSON.parse(xhr.responseText);
-        const result = response["result"];
+        const result = response['result'];
         if (result === "success") {
             $div.innerText = "메모를 성공적으로 작성하였습니다."
             $div.style.color = "green";
